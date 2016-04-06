@@ -73,8 +73,8 @@ var points : (x: Int, y: Int) = (1,2)
 
 typealias carpt = (Int, Int)
 
-func addTwo(left : carpt, right: carpt) -> carpt {
-    return (left.0 + right.0, left.1 + right.1)
+func addTwo(x : carpt, y: carpt) -> carpt {
+    return (x.0 + y.0, x.1 + y.1)
 }
 
 var Points = [
