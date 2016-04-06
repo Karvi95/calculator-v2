@@ -31,7 +31,7 @@ let Div : (Int, Int) -> Int = { $0 / $1 }
 func mathOpBasic(i : Int, j : Int, op : (Int, Int) -> Int) -> Int {
     return op(i, j)
 }
-let result = mathOpBasic(2, j: 7) { _,_ in Times(3, 20) }
+let result = mathOpBasic(1, j: 4) { Add($0,$1) }
 print("Result = \(result)")
 
 
@@ -67,7 +67,7 @@ func ArrayAvg(addThese: [Int]) -> Int {
 func mathOpArray(array : [Int], op : ([Int]) -> Int) -> Int {
     return op(array)
 }
-let resultArray = mathOpArray([1,1,2]) { _ in ArrayAvg([]) }
+let resultArray = mathOpArray([1,2]) { _ in ArrayAvg([]) }
 print("Result = \(resultArray)")
 
 
@@ -89,13 +89,13 @@ print("Result Minusing Points = \(outputLess)")
 
 
 // Points with Dictionary
-var PointDict = [String: Int]()
-
-func AddPointsDict(one : PointDict, two: PointDict) -> PointDict {
-    return ("x":(one["x"] + two["x"]), "y":(one["y"] + two["y"]) )
-}
-var outputDict = AddPointsDict((1,2), y: (3,4))
-print("Result of Adding PointsDict = \(output)")
+//var PointDict = [String: Int]()
+//
+//func AddPointsDict(one : PointDict, two: PointDict) -> PointDict {
+//    return ("x":(one["x"] + two["x"]), "y":(one["y"] + two["y"]) )
+//}
+//var outputDict = AddPointsDict((1,2), y: (3,4))
+//print("Result of Adding PointsDict = \(output)")
 
 
 //func MinusPointsDict(x : Point, y: Point) -> Point {
