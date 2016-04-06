@@ -68,14 +68,23 @@ func mathOpArray(array : [Int], op : ([Int]) -> Int) -> Int {
 let resultArray = mathOpArray([1,1,2]) { _ in ArrayAvg([]) }
 print("Result = \(resultArray)")
 
+typealias Point = (Int, Int)
 
-var points : (x: Int, y: Int) = (1,2)
-
-typealias carpt = (Int, Int)
-
-func addTwo(x : carpt, y: carpt) -> carpt {
+func AddPointsTuple(x : Point, y: Point) -> Point {
     return (x.0 + y.0, x.1 + y.1)
 }
+
+var output = AddPointsTuple((1,2), y: (4,5))
+print("Result of Adding Points = \(output)")
+
+
+func MinusPointsTuple(x : Point, y: Point) -> Point {
+    return (x.0 - y.0, x.1 - y.1)
+}
+
+var outputLess = MinusPointsTuple((1,2), y: (4,5))
+print("Result Minusing Points = \(outputLess)")
+
 
 var Points = [
     "x": 0,
