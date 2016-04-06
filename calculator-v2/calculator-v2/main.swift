@@ -35,7 +35,6 @@ let result = mathOpBasic(2, j: 7) { _,_ in Times(3, 20) }
 print("Result = \(result)")
 
 
-
 // Array FUNctions
 func ArrayAdd(addThese: [Int]) -> Int {
     var total = 0
@@ -72,7 +71,6 @@ let resultArray = mathOpArray([1,1,2]) { _ in ArrayAvg([]) }
 print("Result = \(resultArray)")
 
 
-
 // Points with Tuples
 typealias Point = (Int, Int)
 
@@ -91,7 +89,17 @@ print("Result Minusing Points = \(outputLess)")
 
 
 // Points with Dictionary
-var Points = [
-    "x": 0,
-    "y": 0
-]
+var PointDict = [String: Int]()
+
+func AddPointsDict(one : PointDict, two: PointDict) -> PointDict {
+    return ("x":(one["x"] + two["x"]), "y":(one["y"] + two["y"]) )
+}
+var outputDict = AddPointsDict((1,2), y: (3,4))
+print("Result of Adding PointsDict = \(output)")
+
+
+//func MinusPointsDict(x : Point, y: Point) -> Point {
+//    return (x.0 - y.0, x.1 - y.1)
+//}
+//var outputLessDict = MinusPointsDict((1,2), y: (3,4))
+//print("Result Minusing PointsDict = \(outputLess)")
