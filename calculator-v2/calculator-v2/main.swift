@@ -42,22 +42,22 @@ func ArrayTimes(timesThese: [Int]) -> Int {
     return total
 }
 
-func ArrayCount(addThese: [Int]) -> Int {
-    return addThese.count
+func ArrayCount(countThese: [Int]) -> Int {
+    return countThese.count
 }
 
-func ArrayAvg(addThese: [Int]) -> Int {
-    if (addThese.isEmpty) {
+func ArrayAvg(avgThese: [Int]) -> Int {
+    if (avgThese.isEmpty) {
         return 0
     }
-    return ((ArrayAdd(addThese)) / (ArrayCount(addThese)))
+    return ((ArrayAdd(avgThese)) / (ArrayCount(avgThese)))
 }
 
 // Generic Array Function
 func mathOpArray(array : [Int], op : ([Int]) -> Int) -> Int {
     return op(array)
 }
-let resultArray = mathOpArray([1]) { _ in ArrayAvg([1]) }
+let resultArray = mathOpArray([1]) { _ in ArrayTimes([1,2,3,4,5,6,7,8,9]) }
 print("Result = \(resultArray)")
 
 
