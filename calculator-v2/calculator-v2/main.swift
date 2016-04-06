@@ -21,7 +21,7 @@ let Div : (Int, Int) -> Int = { $0 / $1 }
 func mathOpBasic(i : Int, j : Int, op : (Int, Int) -> Int) -> Int {
     return op(i, j)
 }
-let result = mathOpBasic(1, j: 4) { Minus($0,$1) }
+let result = mathOpBasic(1, j: 4) { Minus($0, $1) }
 print("Result = \(result)")
 
 
@@ -92,7 +92,7 @@ func AddPointsDict(one : [String: Int], two: [String: Int]) -> [String: Int] {
         return PointDict
     }
 }
-var outputDict = AddPointsDict(["x": 1, "y" : 2], two: ["x": 3, "y" : 4])
+var outputDict = AddPointsDict(["x": 1, "y" : 2, "z": 4, "a": 5], two: ["x": 3, "y" : 4, "z": 5, "a": 6])
 print("Result of Adding PointsDict = \(outputDict)")
 
 
