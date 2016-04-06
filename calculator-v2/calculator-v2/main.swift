@@ -34,10 +34,10 @@ func ArrayAdd(addThese: [Int]) -> Int {
     return total
 }
 
-func ArrayTimes(addThese: [Int]) -> Int {
+func ArrayTimes(timesThese: [Int]) -> Int {
     var total = 1
-    for i in 0 ..< addThese.count {
-        total *= addThese[i]
+    for i in 0 ..< timesThese.count {
+        total *= timesThese[i]
     }
     return total
 }
