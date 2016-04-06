@@ -82,9 +82,12 @@ print("Result Minusing Points = \(outputLess)")
 var PointDict = [String: Int](minimumCapacity: 2)
 
 func AddPointsDict(one : [String: Int], two: [String: Int]) -> [String: Int] {
-    var PointDict = [String: Int](minimumCapacity: 2)
-        PointDict["y"] = (one["y"]! + two["y"]!)
-        PointDict["x"] = (one["x"]! + two["x"]!)
+    if (one.keys.count != 2 || one.keys.count != 2) {
+        print("Point does not exist in 2 Dimensional space!")
+    }
+    PointDict["x"] = (one["x"]! + two["x"]!)
+    PointDict["y"] = (one["y"]! + two["y"]!)
+    
     return PointDict
 }
 var outputDict = AddPointsDict(["x": 1, "y" : 2], two: ["x": 3, "y" : 4])
@@ -92,9 +95,12 @@ print("Result of Adding PointsDict = \(outputDict)")
 
 
 func MinusPointsDict(one : [String: Int], two: [String: Int]) -> [String: Int] {
-    var PointDict = [String: Int](minimumCapacity: 2)
-    PointDict["y"] = (one["y"]! - two["y"]!)
+    if (one.keys.count != 2 || one.keys.count != 2) {
+        print("Point does not exist in 2 Dimensional space!")
+    }
     PointDict["x"] = (one["x"]! - two["x"]!)
+    PointDict["y"] = (one["y"]! - two["y"]!)
+
     return PointDict
 }
 var outputDictLess = MinusPointsDict(["x": 1, "y" : 2], two: ["x": 3, "y" : 4])
