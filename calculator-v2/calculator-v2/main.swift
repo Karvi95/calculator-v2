@@ -8,16 +8,6 @@
 
 import Foundation
 
-//
-//  main.swift
-//  test
-//
-//  Created by iGuest on 4/5/16.
-//  Copyright © 2016 karvi90. All rights reserved.
-//
-
-import Foundation
-
 // Basic Math Functions
 let Add : (Int, Int) -> Int = { $0 + $1 }
 
@@ -31,7 +21,7 @@ let Div : (Int, Int) -> Int = { $0 / $1 }
 func mathOpBasic(i : Int, j : Int, op : (Int, Int) -> Int) -> Int {
     return op(i, j)
 }
-let result = mathOpBasic(1, j: 4) { Add($0,$1) }
+let result = mathOpBasic(1, j: 4) { Minus($0,$1) }
 print("Result = \(result)")
 
 
@@ -67,7 +57,7 @@ func ArrayAvg(addThese: [Int]) -> Int {
 func mathOpArray(array : [Int], op : ([Int]) -> Int) -> Int {
     return op(array)
 }
-let resultArray = mathOpArray([1,2]) { _ in ArrayAvg([]) }
+let resultArray = mathOpArray([1]) { _ in ArrayAvg([1]) }
 print("Result = \(resultArray)")
 
 
@@ -88,18 +78,24 @@ var outputLess = MinusPointsTuple((1,2), y: (3,4))
 print("Result Minusing Points = \(outputLess)")
 
 
-// Points with Dictionary
-//var PointDict = [String: Int]()
-//
-//func AddPointsDict(one : PointDict, two: PointDict) -> PointDict {
-//    return ("x":(one["x"] + two["x"]), "y":(one["y"] + two["y"]) )
-//}
-//var outputDict = AddPointsDict((1,2), y: (3,4))
-//print("Result of Adding PointsDict = \(output)")
+//Points with Dictionary
+var PointDict = [String: Int](minimumCapacity: 2)
+
+func AddPointsDict(one : [String: Int], two: [String: Int]) -> [String: Int] {
+    var PointDict = [String: Int](minimumCapacity: 2)
+        PointDict["y"] = (one["y"]! + two["y"]!)
+        PointDict["x"] = (one["x"]! + two["x"]!)
+    return PointDict
+}
+var outputDict = AddPointsDict(["x": 1, "y" : 2], two: ["x": 3, "y" : 4])
+print("Result of Adding PointsDict = \(outputDict)")
 
 
-//func MinusPointsDict(x : Point, y: Point) -> Point {
-//    return (x.0 - y.0, x.1 - y.1)
-//}
-//var outputLessDict = MinusPointsDict((1,2), y: (3,4))
-//print("Result Minusing PointsDict = \(outputLess)")
+func MinusPointsDict(one : [String: Int], two: [String: Int]) -> [String: Int] {
+    var PointDict = [String: Int](minimumCapacity: 2)
+    PointDict["y"] = (one["y"]! - two["y"]!)
+    PointDict["x"] = (one["x"]! - two["x"]!)
+    return PointDict
+}
+var outputDictLess = MinusPointsDict(["x": 1, "y" : 2], two: ["x": 3, "y" : 4])
+print("Result of Minusing PointsDict = \(outputDictLess)")
