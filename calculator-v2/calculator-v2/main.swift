@@ -90,7 +90,6 @@ func AddPointsDict(one : [String: AnyObject], two: [String: AnyObject]) -> [Stri
         for i in 0..<one.keys.count {
             PointDict["\(Array(one)[i].0)"] = (Int(Array(one)[i].1 as! NSNumber) + Int(Array(two)[i].1 as! NSNumber))
         }
-        
     }
     return PointDict
 }
@@ -106,7 +105,6 @@ func MinusPointsDict(one : [String: AnyObject], two: [String: AnyObject]) -> [St
         for i in 0..<one.keys.count {
             PointDict["\(Array(one)[i].0)"] = (Int(Array(one)[i].1 as! NSNumber) - Int(Array(two)[i].1 as! NSNumber))
         }
-        
     }
     return PointDict
 }
