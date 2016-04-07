@@ -18,10 +18,10 @@ let Times : (Int, Int) -> Int = { $0 * $1 }
 let Div : (Int, Int) -> Int = { $0 / $1 }
 
 // Generic Math Function
-func mathOpBasic(i : Int, j : Int, op : (Int, Int) -> Int) -> Int {
-    return op(i, j)
+func mathOpBasic(i : Int, j : Int, eval : (Int, Int) -> Int) -> Int {
+    return eval(i, j)
 }
-let result = mathOpBasic(10, j: 4, op: Minus)
+let result = mathOpBasic(10, j: 4, eval: Minus)
 print("Result = \(result)")
 
 
