@@ -21,7 +21,7 @@ let Div : (Int, Int) -> Int = { $0 / $1 }
 func mathOpBasic(i : Int, j : Int, op : (Int, Int) -> Int) -> Int {
     return op(i, j)
 }
-let result = mathOpBasic(1, j: 4) { Minus($0, $1) }
+let result = mathOpBasic(10, j: 4, op: Minus)
 print("Result = \(result)")
 
 
@@ -35,7 +35,7 @@ func ArrayAdd(addThese: [Int]) -> Int {
 }
 
 func ArrayTimes(timesThese: [Int]) -> Int {
-    if (avgThese.isEmpty) {
+    if (timesThese.isEmpty) {
         return 0
     }
     var total = 1
@@ -57,10 +57,10 @@ func ArrayAvg(avgThese: [Int]) -> Int {
 }
 
 // Generic Array Function
-func mathOpArray(array : [Int], op : ([Int]) -> Int) -> Int {
-    return op(array)
+func mathOpArray(array : [Int], eval: [Int] -> Int) -> Int {
+    return eval(array)
 }
-let resultArray = mathOpArray([1]) { _ in ArrayTimes([1,2,3,4,5,6,7,8,9]) }
+let resultArray = mathOpArray([1,2,3,4,5], eval: ArrayTimes)
 print("Result = \(resultArray)")
 
 
