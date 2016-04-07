@@ -35,6 +35,9 @@ func ArrayAdd(addThese: [Int]) -> Int {
 }
 
 func ArrayTimes(timesThese: [Int]) -> Int {
+    if (avgThese.isEmpty) {
+        return 0
+    }
     var total = 1
     for i in 0 ..< timesThese.count {
         total *= timesThese[i]
