@@ -82,33 +82,33 @@ print("Result Minusing Points = \(outputLess)")
 
 
 //Points with Dictionary
-var PointDict = [String: Int](minimumCapacity: 1)
-
-func AddPointsDict(one : [String: Int], two: [String: Int]) -> [String: Int] {
+func AddPointsDict(one : [String: AnyObject], two: [String: AnyObject]) -> [String: AnyObject] {
+    var PointDict = [String: AnyObject](minimumCapacity: 1)
     if (one.keys.count != two.keys.count) {
         print("Operating on Points from different dimensions! Nothing was evaluated.")
-        return [String: Int](minimumCapacity: 1)
     } else {
         for i in 0..<one.keys.count {
-            PointDict["\(Array(one)[i].0)"] = (Array(one)[i].1 + Array(two)[i].1)
+            PointDict["\(Array(one)[i].0)"] = (Int(Array(one)[i].1 as! NSNumber) + Int(Array(two)[i].1 as! NSNumber))
         }
-        return PointDict
+        
     }
+    return PointDict
 }
-var outputDict = AddPointsDict(["x": 1, "y" : 2, "z": 4, "a": 5], two: ["x": 3, "y" : 4, "z": 5, "a": 6])
+var outputDict = AddPointsDict(["x": 1, "y" : 2, "string": 4, "a": 5.9], two: ["x": 3, "y" : 4, "z": 5, "a": 6.1])
 print("Result of Adding PointsDict = \(outputDict)")
 
 
-func MinusPointsDict(one : [String: Int], two: [String: Int]) -> [String: Int] {
+func MinusPointsDict(one : [String: AnyObject], two: [String: AnyObject]) -> [String: AnyObject] {
+    var PointDict = [String: AnyObject](minimumCapacity: 1)
     if (one.keys.count != two.keys.count) {
         print("Operating on Points from different dimensions! Nothing was evaluated.")
-        return [String: Int](minimumCapacity: 1)
     } else {
         for i in 0..<one.keys.count {
-            PointDict["\(Array(one)[i].0)"] = (Array(one)[i].1 - Array(two)[i].1)
+            PointDict["\(Array(one)[i].0)"] = (Int(Array(one)[i].1 as! NSNumber) - Int(Array(two)[i].1 as! NSNumber))
         }
-        return PointDict
+        
     }
+    return PointDict
 }
 var outputDictLess = MinusPointsDict(["x": 1], two: ["x": 3, "y" : 4])
 print("Result of Minusing PointsDict = \(outputDictLess)")
