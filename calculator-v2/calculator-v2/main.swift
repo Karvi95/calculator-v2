@@ -98,7 +98,7 @@ print("Result of Adding PointsDict = \(outputDict)")
 
 
 func MinusPointsDict(one : [String: AnyObject], two: [String: AnyObject]) -> [String: AnyObject] {
-    var PointDict = [String: AnyObject](minimumCapacity: 1)
+    var PointDict = [String: AnyObject]()
     if (one.keys.count != two.keys.count) {
         print("Operating on Points from different dimensions! Nothing was evaluated.")
     } else {
@@ -108,5 +108,5 @@ func MinusPointsDict(one : [String: AnyObject], two: [String: AnyObject]) -> [St
     }
     return PointDict
 }
-var outputDictLess = MinusPointsDict(["x": 1], two: ["x": 3, "y" : 4])
+var outputDictLess = MinusPointsDict([:], two: [:])
 print("Result of Minusing PointsDict = \(outputDictLess)")
